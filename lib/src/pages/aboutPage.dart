@@ -133,6 +133,24 @@ class AboutState extends State<About> {
                   contentPadding:
                       EdgeInsets.only(top: 5, right: 10, bottom: 5, left: 10),
                   title: Text(
+                    "Fahad Mahfoth",
+                    style: TextStyle(
+                      fontSize: 18,
+                      //fontWeight: FontWeight.bold
+                    ),
+                    textAlign: TextAlign.left,
+                    textDirection: TextDirection.ltr,
+                  ),
+                  subtitle: Text('(Web&Mobile-Developer'),
+                  leading: CircleAvatar(
+                    backgroundImage: AssetImage('assats/imags/fahad.jpg'),
+                    radius: 30,
+                  ),
+                ),
+                const ListTile(
+                  contentPadding:
+                      EdgeInsets.only(top: 5, right: 10, bottom: 5, left: 10),
+                  title: Text(
                     "Shahla Ali",
                     style: TextStyle(
                       fontSize: 18,

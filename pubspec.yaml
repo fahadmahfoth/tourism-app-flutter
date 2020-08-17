@@ -37,27 +37,18 @@ flutter :
   uses-material-design: true
 
   assets:
-      - assats/imags/rustrant.jpg
-      - assats/imags/coffe.jpg
-      - assats/imags/mostaq.jpg
-      - assats/imags/culture.jpg
-      - assats/imags/shopping.jpg
-      - assats/imags/abolayla.jpg
-      - assats/imags/1.png
-      - assats/imags/2.png
       - assats/imags/marwa1.png
       - assats/imags/mays.png
       - assats/imags/mohammed.png
-      - assats/imags/mostaq.jpg
       - assats/imags/noor.png
       - assats/imags/shhla.png
       - assats/imags/taha.png
       - assats/imags/yosif.png
-      - assats/imags/profile.png
       - assats/imags/abd.png
       - assats/imags/3.png
       - assats/imags/logo.png
       - assats/imags/feedback.jpg
+      - assats/imags/fahad.jpg
 
 
 # feedback
