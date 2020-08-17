@@ -12,6 +12,7 @@ import 'package:tourism/src/utls/sqllite_database_old.dart';
 
 class PlaceDetails extends StatefulWidget {
   final place_d;
+
   PlaceDetails(this.place_d);
   @override
   _PlaceDetailsState createState() => _PlaceDetailsState();

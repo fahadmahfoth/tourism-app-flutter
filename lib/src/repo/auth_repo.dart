@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tourism/src/utls/url.dart';
 
 class AuthRepo {
   _save(String token) async {
@@ -13,7 +14,7 @@ class AuthRepo {
 
   var status;
   Future<List> login(String username, String password) async {
-    String myUrl = "http://192.168.0.107:8000/api/auth/login";
+    String myUrl = "${Url.url}/api/auth/login";
     try {
       await http.post(myUrl, body: {
         "password": "$password",
@@ -37,7 +38,7 @@ class AuthRepo {
   }
 
   Future<List> rigester(String username, String email, String password) async {
-    String myUrl = "http://192.168.0.107:8000/api/auth/signup";
+    String myUrl = "${Url.url}/api/auth/signup";
     try {
       await http.post(myUrl, body: {
         "password_confirmation": "$password",

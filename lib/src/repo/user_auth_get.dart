@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:io';
 
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tourism/src/utls/url.dart';
 
 class UserRepo {
   Future user() async {
@@ -11,8 +12,7 @@ class UserRepo {
     final value = prefs.get(key) ?? 0;
     print(value);
     try {
-      final response =
-          await http.get("http://192.168.0.107:8000/api/user", headers: {
+      final response = await http.get("${Url.url}/api/user", headers: {
         'Authorization': 'Bearer $value',
       });
 
