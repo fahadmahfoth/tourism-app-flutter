@@ -1,0 +1,68 @@
+name: tourism
+description: A new Flutter project.
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.3
+  shared_preferences: ^0.5.8
+  pull_to_refresh: ^1.6.0
+  google_maps_flutter: ^0.5.28+1
+  cached_network_image: ^2.2.0+1
+  http: ^0.12.2
+  dots_indicator: ^1.2.0
+  animated_icon_button: ^0.2.0
+  flutter_spinkit: "^4.1.2"
+  font_awesome_flutter: ^8.8.1
+  sqflite: any
+  path_provider: any
+  provider: any
+
+dev_dependencies:
+  flutter_test:
+
+    sdk: flutter
+
+
+
+flutter :
+  uses-material-design: true
+
+  assets:
+      - assats/imags/rustrant.jpg
+      - assats/imags/coffe.jpg
+      - assats/imags/mostaq.jpg
+      - assats/imags/culture.jpg
+      - assats/imags/shopping.jpg
+      - assats/imags/abolayla.jpg
+      - assats/imags/1.png
+      - assats/imags/2.png
+      - assats/imags/marwa1.png
+      - assats/imags/mays.png
+      - assats/imags/mohammed.png
+      - assats/imags/mostaq.jpg
+      - assats/imags/noor.png
+      - assats/imags/shhla.png
+      - assats/imags/taha.png
+      - assats/imags/yosif.png
+      - assats/imags/profile.png
+      - assats/imags/abd.png
+      - assats/imags/3.png
+      - assats/imags/logo.png
+      - assats/imags/feedback.jpg
+
+
+# feedback
+  fonts:
+      - family: Amiri
+        fonts:
+          - asset: font/Amiri/Amiri-Bold.ttf
+          - asset: font/Amiri/Amiri-Regular.ttf

@@ -1,0 +1,4 @@
+#Thu Aug 13 16:15:05 AST 2020
+base.0=/home/fahad/projects/flutter/tourism-app-flutter-master/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
