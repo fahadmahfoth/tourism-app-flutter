@@ -27,8 +27,8 @@ class _PlacePageState extends State<PlaceCatogaryPage> {
           height: 90,
           child: Center(
             child: Container(
-              height: 42,
-              width: MediaQuery.of(context).size.width - 100,
+              height: 45,
+              width: MediaQuery.of(context).size.width -90,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(25),
@@ -48,22 +48,23 @@ class _PlacePageState extends State<PlaceCatogaryPage> {
                     left: 6,
                     top: 10,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 6, right: 6, top: 20),
+                  Center(
                     child: TextFormField(
-                      style: TextStyle(color: Theme.of(context).primaryColor),
-                      onChanged: (change) {
-                        setState(() {
-                          textField = change;
-                        });
-                      },
-                      decoration: InputDecoration(
-                          hintStyle:
-                              TextStyle(color: Theme.of(context).primaryColor),
-                          border: InputBorder.none,
-                          hintText: "البحث"),
-                    ),
+                        style: TextStyle(color: Theme.of(context).primaryColor),
+                        onChanged: (change) {
+                          setState(() {
+                            textField = change;
+                          });
+                        },
+                        decoration: InputDecoration(
+                            hintStyle:
+                                TextStyle(color: Theme.of(context).primaryColor,fontSize: 14),
+                            border: InputBorder.none,
+                            hintText: "البحث",
+                          ),
+                      ),
                   ),
+                  
                 ],
               ),
             ),

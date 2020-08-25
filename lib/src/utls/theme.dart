@@ -5,11 +5,40 @@ ThemeData light = ThemeData(
     brightness: Brightness.light,
     primaryColor: Color(0xFF092061),
     accentColor: Color(0xFF092061),
-    scaffoldBackgroundColor: Color(0xfff1f1f1));
+    fontFamily: "Amiri",
+    scaffoldBackgroundColor: Color(0xfff1f1f1),
+    primaryTextTheme: TextTheme(
+
+      bodyText1: TextStyle(
+        fontSize: 20
+      ),
+
+    ),
+    textTheme: TextTheme(
+      headline6: TextStyle(
+        fontSize: 20
+      )
+    )
+    );
+    
 
 ThemeData dark = ThemeData(
+      primaryTextTheme: TextTheme(
+
+      bodyText1: TextStyle(
+        fontSize: 20
+      ),
+
+    ),
+    textTheme: TextTheme(
+      headline6: TextStyle(
+        fontSize: 20
+      )
+    ),    
     brightness: Brightness.dark,
+    
     primarySwatch: Colors.indigo,
+    fontFamily: "Amiri",
     accentColor: Colors.white,
     scaffoldBackgroundColor: Colors.black,
     bottomNavigationBarTheme:

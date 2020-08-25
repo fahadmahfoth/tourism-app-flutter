@@ -25,11 +25,14 @@ class _PlaceWidgetState extends State<InsidePlaceWidget> {
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Container(
+                height: 256,
                 width: MediaQuery.of(context).size.width,
                 child: widget.img != null
                     ? CachedNetworkImage(
                         imageUrl: widget.img,
                         fit: BoxFit.cover,
+                        placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+        errorWidget: (context, url, error) => Center(child: Icon(Icons.error)),
                       )
                     : SizedBox(),
               ),

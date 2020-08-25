@@ -141,7 +141,7 @@ class AboutState extends State<About> {
                     textAlign: TextAlign.left,
                     textDirection: TextDirection.ltr,
                   ),
-                  subtitle: Text('(Web&Mobile-Developer'),
+                  subtitle: Text('BackEnd & Mobile  - Developer'),
                   leading: CircleAvatar(
                     backgroundImage: AssetImage('assats/imags/fahad.jpg'),
                     radius: 30,
@@ -177,7 +177,7 @@ class AboutState extends State<About> {
                     textAlign: TextAlign.left,
                     textDirection: TextDirection.ltr,
                   ),
-                  subtitle: Text('Web-Developer'),
+                  subtitle: Text('BackEnd-Developer'),
                   leading: CircleAvatar(
                     backgroundImage: AssetImage('assats/imags/abd.png'),
                     radius: 30,

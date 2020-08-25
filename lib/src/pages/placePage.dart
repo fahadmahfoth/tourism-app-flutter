@@ -48,7 +48,7 @@ class _InsidePlacePageState extends State<InsidePlacePage> {
                         );
                       })
                   : Center(
-                      child: Text('no place here'),
+                      child: Text('لاتوجد اماكن حالياً'),
                     ),
             )),
           ],

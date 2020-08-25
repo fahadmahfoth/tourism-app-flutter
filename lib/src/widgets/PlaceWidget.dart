@@ -17,10 +17,13 @@ class PlaceWidget extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Container(
+                height: 256,
                 width: MediaQuery.of(context).size.width,
                 child: CachedNetworkImage(
                   imageUrl: img,
                   fit: BoxFit.cover,
+                  placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+        errorWidget: (context, url, error) => Center(child: Icon(Icons.error)),
                 ),
               ),
             ),

@@ -184,6 +184,9 @@ class SignUpState extends State<SignUp> {
                                         .whenComplete(() {
                                       print(database.status);
                                       if (database.status) {
+                                        database.login(
+                                                          _emailController.text,
+                                                          _passwordController.text);
                                         showDialog(
                                             context: context,
                                             builder: (context) {
@@ -197,10 +200,7 @@ class SignUpState extends State<SignUp> {
                                                         width: 2),
                                                     color: Colors.red,
                                                     onPressed: () {
-                                                      database.login(
-                                                          _emailController.text,
-                                                          _passwordController
-                                                              .text);
+                                                      
                                                       Navigator.pushReplacement(
                                                           context,
                                                           CupertinoPageRoute(

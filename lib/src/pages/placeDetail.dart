@@ -23,6 +23,7 @@ class _PlaceDetailsState extends State<PlaceDetails> {
   DatabaseHelper db = new DatabaseHelper();
 
   DatabaseHelperOld dbOld = new DatabaseHelperOld();
+  
 
   addToSeen() async {
     Future.delayed(const Duration(seconds: 2), () {
@@ -30,7 +31,7 @@ class _PlaceDetailsState extends State<PlaceDetails> {
       dbOld.saveSeen(Seen(
           id: widget.place_d['id'],
           name: widget.place_d['name'],
-          categoryId: widget.place_d['category_id'],
+          categoryId:  int.parse(widget.place_d['category_id']) ,
           city: widget.place_d['city'],
           contente: widget.place_d['contente'],
           days: widget.place_d['days'],
@@ -74,16 +75,14 @@ class _PlaceDetailsState extends State<PlaceDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      child: SafeArea(
-          child: FutureBuilder(
+      child: FutureBuilder(
         future: db.getFavorite(widget.place_d['id']),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView(
               physics: BouncingScrollPhysics(),
               children: [
-                Expanded(
-                  child: GestureDetector(
+                GestureDetector(
                     child: Stack(
                       children: [
                         Container(
@@ -150,7 +149,9 @@ class _PlaceDetailsState extends State<PlaceDetails> {
                                         ),
                                 ))
                             : SizedBox(),
-                        Positioned(
+                      widget.place_d['map_lng'] == null && widget.place_d['map_lat'] == null ?  SizedBox(
+                  height: 0,
+                ):   Positioned(
                             left: 20,
                             bottom: 10,
                             child: IconButton(
@@ -166,8 +167,8 @@ class _PlaceDetailsState extends State<PlaceDetails> {
                                         }));
                               },
                               icon: FaIcon(
-                                FontAwesomeIcons.mapMarkedAlt,
-                                color: Colors.green,
+                                FontAwesomeIcons.locationArrow,
+                                color: Colors.white,
                               ),
                             )),
                         Positioned(
@@ -176,7 +177,7 @@ class _PlaceDetailsState extends State<PlaceDetails> {
                             child: IconButton(
                               icon: Icon(
                                 Icons.close,
-                                color: Colors.black,
+                                color: Colors.white,
                                 size: 30,
                               ),
                               onPressed: () {
@@ -186,29 +187,37 @@ class _PlaceDetailsState extends State<PlaceDetails> {
                       ],
                     ),
                   ),
-                ),
+                
                 SizedBox(
                   height: 10,
                 ),
-                Container(
+             widget.place_d['phone_number'] == null?  SizedBox(
+                  height: 0,
+                ):Container(
                   child: ListTile(
                     title: Text('رقم الهاتف'),
                     subtitle: Text(widget.place_d['phone_number'].toString()),
                   ),
                 ),
-                Container(
+               widget.place_d['city'] == null?  SizedBox(
+                  height: 0,
+                ): Container(
                   child: ListTile(
                     title: Text('الحي او المنطقة'),
                     subtitle: Text(widget.place_d['city'].toString()),
                   ),
                 ),
-                Container(
+                widget.place_d['days'] == null?  SizedBox(
+                  height: 0,
+                ): Container(
                   child: ListTile(
                     title: Text('ايام العمل'),
                     subtitle: Text(widget.place_d['days'].toString()),
                   ),
                 ),
-                Container(
+               widget.place_d['time_up'] == null?  SizedBox(
+                  height: 0,
+                ): Container(
                   child: ListTile(
                     title: Text('وقت الفتح'),
                     subtitle: Text(widget.place_d['time_up'].toString()),
@@ -217,15 +226,19 @@ class _PlaceDetailsState extends State<PlaceDetails> {
                 SizedBox(
                   height: 5,
                 ),
-                Container(
+               widget.place_d['time_down'] == null?  SizedBox(
+                  height: 0,
+                ):  Container(
                   child: ListTile(
                     title: Text('وقت الاغلاق'),
-                    subtitle: Text(widget.place_d['time_up'].toString()),
+                    subtitle: Text(widget.place_d['time_down'].toString()),
                   ),
                 ),
-                Container(
+               widget.place_d['contente'] == null?  SizedBox(
+                  height: 0,
+                ):  Container(
                   child: ListTile(
-                    title: Text('contente'),
+                    title: Text('تفاصيل اخرى'),
                     subtitle: Text(widget.place_d['contente'].toString()),
                   ),
                 ),
@@ -238,6 +251,6 @@ class _PlaceDetailsState extends State<PlaceDetails> {
           }
         },
       )),
-    ));
+    );
   }
 }

@@ -14,13 +14,15 @@ class AuthRepo {
 
   var status;
   Future<List> login(String username, String password) async {
-    String myUrl = "${Url.url}/api/auth/login";
+    String myUrl = "https://tourismnineveh.codeforiraq.org/api/auth/login";
     try {
       await http.post(myUrl, body: {
         "password": "$password",
         "email": "$username",
       }).then((response) {
         status = response.statusCode == HttpStatus.ok;
+        print(response.statusCode);
+        print(response.body);
 
         if (status) {
           var data = json.decode(response.body);

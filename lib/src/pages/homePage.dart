@@ -42,9 +42,9 @@ class _HomePageState extends State<HomePage> {
               title: Text('الرئيسية'),
             ),
             BottomNavigationBarItem(
-                icon: FaIcon(FontAwesomeIcons.map), title: Text('الموقع')),
+                icon: FaIcon(FontAwesomeIcons.searchLocation), title: Text('الموقع')),
             BottomNavigationBarItem(
-                icon: FaIcon(FontAwesomeIcons.star), title: Text('المفضلة')),
+                icon: FaIcon(Icons.favorite_border), title: Text('المفضلة')),
           ]),
 
       // drawer: ,
