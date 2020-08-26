@@ -122,19 +122,17 @@ class _PlaceDetailsState extends State<PlaceDetails> {
                                       db.saveFavorite(Favorite(
                                           id: widget.place_d['id'],
                                           name: widget.place_d['name'],
-                                          categoryId:
-                                              widget.place_d['category_id'],
+                                          categoryId: int.parse(widget.place_d['category_id']),
                                           city: widget.place_d['city'],
                                           contente: widget.place_d['contente'],
                                           days: widget.place_d['days'],
                                           image: widget.place_d['image'],
                                           mapLng: widget.place_d['map_lng'],
                                           mapLat: widget.place_d['map_lat'],
-                                          phoneNumber:
-                                              widget.place_d['phone_number'],
+                                          phoneNumber: widget.place_d['phone_number'],
                                           timeDown: widget.place_d['time_down'],
                                           timeUp: widget.place_d['time_up']));
-                                      print("Saved to favorite ! ");
+                                          print("Saved to favorite ! ");
                                     }
                                   },
                                   iconSize: 35,
