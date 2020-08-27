@@ -179,7 +179,7 @@ class _MYdrwerState extends State<MYdrwer> {
                       child: new InkWell(
                         child: Center(
                             child: new Text(
-                          "seen",
+                          "السجل",
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
@@ -281,7 +281,7 @@ class _MYdrwerState extends State<MYdrwer> {
                 ),
                 child: Consumer<ThemeNotifier>(
                   builder: (context, notifier, child) => SwitchListTile(
-                    title: Text("Dark Mode",
+                    title: Text("الوظع المظلم",
                         style: TextStyle(
                           color: Colors.white,
                         )),
@@ -308,7 +308,7 @@ class _MYdrwerState extends State<MYdrwer> {
                       child: new InkWell(
                         child: Center(
                             child: new Text(
-                          "log out",
+                          "خروج",
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,

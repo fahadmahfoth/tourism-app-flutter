@@ -21,7 +21,7 @@ class Favorite {
   });
 
   final int id;
-  final int categoryId;
+  final String categoryId;
   final String name;
   final String contente;
   final String phoneNumber;

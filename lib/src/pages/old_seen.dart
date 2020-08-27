@@ -43,7 +43,7 @@ class _SeenState extends State<SeenPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('seen'),
+          title: Text('السجل'),
           centerTitle: true,
           actions: [
             IconButton(

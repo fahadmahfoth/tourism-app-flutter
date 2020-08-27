@@ -31,7 +31,7 @@ class _PlaceDetailsState extends State<PlaceDetails> {
       dbOld.saveSeen(Seen(
           id: widget.place_d['id'],
           name: widget.place_d['name'],
-          categoryId:  int.parse(widget.place_d['category_id']) ,
+          categoryId:widget.place_d['category_id'],
           city: widget.place_d['city'],
           contente: widget.place_d['contente'],
           days: widget.place_d['days'],
@@ -122,7 +122,7 @@ class _PlaceDetailsState extends State<PlaceDetails> {
                                       db.saveFavorite(Favorite(
                                           id: widget.place_d['id'],
                                           name: widget.place_d['name'],
-                                          categoryId: int.parse(widget.place_d['category_id']),
+                                          categoryId: widget.place_d['category_id'],
                                           city: widget.place_d['city'],
                                           contente: widget.place_d['contente'],
                                           days: widget.place_d['days'],
@@ -161,7 +161,10 @@ class _PlaceDetailsState extends State<PlaceDetails> {
                                         fullscreenDialog: true,
                                         builder: (context) {
                                           return LocationPlacePage(
-                                              widget.place_d['name']);
+                                            name:  widget.place_d['name'],
+                                            lat: widget.place_d['map_lat'],
+                                            lng: widget.place_d['map_lng'],
+                                              );
                                         }));
                               },
                               icon: FaIcon(

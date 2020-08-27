@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tourism/src/pages/placeDetail.dart';
 import 'package:tourism/src/repo/place_repo.dart';
 import 'package:tourism/src/utls/sqllite_database.dart';
 import 'package:tourism/src/widgets/insidePlaceWidget.dart';
@@ -52,14 +53,26 @@ class _FavPageState extends State<FavPage> {
                           itemCount: snapshot.data.length,
                           itemBuilder: (context, index) {
                             print(snapshot.data[index]['image']);
-                            return InsidePlaceWidget(
-                              title: snapshot.data[index]['name'],
-                              img: snapshot.data[index]['image'],
+                            return GestureDetector(
+                              onTap: (){
+                                 Navigator.push(
+                                        context,
+                                        CupertinoPageRoute(
+                                            fullscreenDialog: true,
+                                            builder: (context) {
+                                              return PlaceDetails(
+                                                  snapshot.data[index]);
+                                            }));
+                              },
+                                                          child: InsidePlaceWidget(
+                                title: snapshot.data[index]['name'],
+                                img: snapshot.data[index]['image'],
+                              ),
                             );
                           },
                         )
                       : Center(
-                          child: Text('no favorite you make'),
+                          child: Text('لاتوجد مواقع مفضلة لديك'),
                         );
                 } else {
                   return Center(

@@ -30,7 +30,7 @@ class DatabaseHelperOld {
   void _onCreate(Database db, int newVersion) async {
     try {
       await db.execute('''CREATE TABLE oldTable (id INTEGER PRIMARY KEY,
-         category_id INTEGER,name TEXT,contente TEXT,phone_number TEXT,city TEXT,time_up TEXT,time_down TEXT,
+         category_id TEXT,name TEXT,contente TEXT,phone_number TEXT,city TEXT,time_up TEXT,time_down TEXT,
          days TEXT,image TEXT,map_lat TEXT,map_lng TEXT,created_at  DATETIME)''');
     } catch (e) {
       print(e.toString());
