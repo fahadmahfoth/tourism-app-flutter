@@ -139,7 +139,11 @@ class ProblemPagState extends State<ProblemPag> {
               textAlign: TextAlign.right,
               keyboardType: TextInputType.text,
               obscureText: false,
+              style: TextStyle(
+                color: Colors.black
+              ),
               decoration: new InputDecoration(
+                
                 
                 contentPadding: EdgeInsets.only(top: 12, bottom: 12),
                 suffixIcon: Padding(
@@ -169,6 +173,9 @@ class ProblemPagState extends State<ProblemPag> {
               textAlign: TextAlign.right,
               keyboardType: TextInputType.emailAddress,
               obscureText: false,
+              style: TextStyle(
+                color: Colors.black
+              ),
               decoration: new InputDecoration(
                 contentPadding: EdgeInsets.only(top: 12, bottom: 12),
                 suffixIcon: Padding(
@@ -181,6 +188,10 @@ class ProblemPagState extends State<ProblemPag> {
                 hintText: 'البريد الالكتروني',
                 filled: true,
                 fillColor: Colors.white,
+                 hintStyle: TextStyle(
+                  color: Colors.black
+                ),
+
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                 ),
@@ -196,10 +207,17 @@ class ProblemPagState extends State<ProblemPag> {
               keyboardType: TextInputType.multiline,
               textAlign: TextAlign.right,
               obscureText: false,
+              style: TextStyle(
+                color: Colors.black
+              ),
+
               decoration: new InputDecoration(
                 contentPadding: EdgeInsets.only(top: 12, bottom: 12, right: 12),
                 alignLabelWithHint: true,
                 hintText: ' اكتب المشكلة هنا',
+                 hintStyle: TextStyle(
+                  color: Colors.black
+                ),
                 filled: true,
                 fillColor: Colors.white,
                 border: OutlineInputBorder(

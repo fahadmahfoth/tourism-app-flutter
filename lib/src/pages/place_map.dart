@@ -25,13 +25,13 @@ class _LocationPageState extends State<LocationPlacePage> {
 
 
   String _mapStyle;
-    String _mapdarkStyle;
+  String _mapdarkStyle;
 
 
 
 @override
   void initState() {
-    // TODO: implement initState
+
 
 
     super.initState();

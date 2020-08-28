@@ -101,7 +101,7 @@ class _LocationPageState extends State<LocationPage> {
         markers: Set.from(
           markers,
         ),
-        initialCameraPosition: CameraPosition(target: latlng, zoom: 15.0),
+        initialCameraPosition: CameraPosition(target: latlng, zoom: 12.0),
          mapType: MapType.normal,
         onMapCreated: (GoogleMapController controller) {
     mapController = controller;

@@ -48,21 +48,24 @@ class _PlacePageState extends State<PlaceCatogaryPage> {
                     left: 6,
                     top: 10,
                   ),
-                  Center(
-                    child: TextFormField(
-                        style: TextStyle(color: Theme.of(context).primaryColor),
-                        onChanged: (change) {
-                          setState(() {
-                            textField = change;
-                          });
-                        },
-                        decoration: InputDecoration(
-                            hintStyle:
-                                TextStyle(color: Theme.of(context).primaryColor,fontSize: 14),
-                            border: InputBorder.none,
-                            hintText: "البحث",
-                          ),
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 7),
+                    child: Center(
+                      child: TextFormField(
+                          style: TextStyle(color: Theme.of(context).primaryColor),
+                          onChanged: (change) {
+                            setState(() {
+                              textField = change;
+                            });
+                          },
+                          decoration: InputDecoration(
+                              hintStyle:
+                                  TextStyle(color: Theme.of(context).primaryColor,fontSize: 14),
+                              border: InputBorder.none,
+                              hintText: "البحث",
+                            ),
+                        ),
+                    ),
                   ),
                   
                 ],
