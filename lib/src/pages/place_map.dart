@@ -1,7 +1,9 @@
 /// lib/Componts/Location.dart
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:provider/provider.dart';
+import 'package:tourism/src/utls/theme.dart';
 
 class LocationPlacePage extends StatefulWidget {
   final name;
@@ -16,34 +18,72 @@ class _LocationPageState extends State<LocationPlacePage> {
 
 
 
-    Completer<GoogleMapController> _controller = Completer();
 
-  static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
-    zoom: 14.4746,
-  );
+  GoogleMapController mapController ;
 
-  static final CameraPosition _kLake = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(37.43296265331129, -122.08832357078792),
-      tilt: 59.440717697143555,
-      zoom: 19.151926040649414);
+    BitmapDescriptor pinLocationIcon;
+
+
+  String _mapStyle;
+    String _mapdarkStyle;
+
+
+
+@override
+  void initState() {
+    // TODO: implement initState
+
+
+    super.initState();
+
+
+      BitmapDescriptor.fromAssetImage(
+         ImageConfiguration(devicePixelRatio: 2.5),
+         'assets/imags/marker.png').then((onValue) {
+            pinLocationIcon = onValue;
+         });
+
+          rootBundle.loadString('assets/map_style.txt').then((string) {
+    _mapStyle = string;
+  });
+
+          rootBundle.loadString('assets/map_style_dark.txt').then((string) {
+    _mapdarkStyle = string;
+  });
+
+
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.name),
       ),
-      body: GoogleMap(
+      body: Consumer<ThemeNotifier>(
+                  builder: (context, notifier, child) => GoogleMap(
+        markers: {
+          Marker(markerId: (MarkerId(widget.name)
+
+          ),
+          position: LatLng(double.parse(widget.lat), double.parse(widget.lng)),
+          infoWindow: InfoWindow(
+            title: widget.name
+          ),
+           icon: pinLocationIcon
+          )
+        },
         mapType: MapType.normal,
         initialCameraPosition:  CameraPosition(
     target: LatLng(double.parse(widget.lat), double.parse(widget.lng)),
     zoom: 14.4746,
   ),
         onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
+    mapController = controller;
+    notifier.darkTheme? mapController.setMapStyle(_mapStyle) :mapController.setMapStyle(_mapdarkStyle);
         },
       ),
-    );
+    ) ) ;
   }
 }

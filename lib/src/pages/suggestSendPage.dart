@@ -106,7 +106,7 @@ class ProblemPagState extends State<ProblemPag> {
                                     style: TextStyle(color: Colors.black),
                                   ),
                                   content: Text(
-                                      "تاكد من اتصالك بالانترنت ,وكتابة المعلومات بشكل صحيح , يجب كتابة كلمة سر قوية"),
+                                      "تاكد من اتصالك بالانترنت"),
                                 );
                               });
                         }
@@ -140,6 +140,7 @@ class ProblemPagState extends State<ProblemPag> {
               keyboardType: TextInputType.text,
               obscureText: false,
               decoration: new InputDecoration(
+                
                 contentPadding: EdgeInsets.only(top: 12, bottom: 12),
                 suffixIcon: Padding(
                   padding: EdgeInsets.only(right: 5.0),
@@ -149,6 +150,9 @@ class ProblemPagState extends State<ProblemPag> {
                   ),
                 ),
                 hintText: 'الاسم',
+                hintStyle: TextStyle(
+                  color: Colors.black
+                ),
                 filled: true,
                 fillColor: Colors.white,
                 border: OutlineInputBorder(
